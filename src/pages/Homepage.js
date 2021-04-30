@@ -12,8 +12,9 @@ const Dino = (props) => {
 
 const Homepage = () => {
 
-  const [dinosaur, setDinosaur] = useState()
+  const [dinosaur, setDinosaur] = useState('')
   const [dinos, setDinos] = useState([])
+  const [filteredDinos, setFilteredDinos] = useState([])
 
     useEffect(() => {
       fetch('https://dinosaursapi.herokuapp.com/api/getall')
@@ -32,9 +33,8 @@ const Homepage = () => {
     useEffect(() => {
       let dinosCopy = [...dinos]
       dinosCopy = dinosCopy.filter( dino => dino.dino.includes(dinosaur))
-
-      setDinos(dinosCopy)
-    }, [dinosaur])
+      setFilteredDinos(dinosCopy)
+    }, [dinosaur, dinos])
 
     return (
         <>
@@ -43,7 +43,7 @@ const Homepage = () => {
               <input value={dinosaur} type='text' onChange={handleChange} />
             </form>
               {
-                dinos.map(dino => 
+                filteredDinos.map(dino => 
                   <Dino key={dino.dino} name={dino.dino} info={dino.info}/>
                 )
               }
