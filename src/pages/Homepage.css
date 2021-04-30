@@ -1,0 +1,67 @@
+form {
+    padding: 20px;
+    text-align: center;
+}
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 60%;
+    height: 20px;
+    border-radius: 3px;
+}
+.dinodata {
+    border: solid black 2px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: rgb(255, 248, 220, 0.5);
+
+}
+.dinodata p {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+@media only screen and (min-width: 768px) {
+
+    
+    label {
+        font-size: 23px;
+    }
+    input {
+        width: 60%;
+        height: 30px;
+    }
+    .dinodata {
+        margin: 40px;
+    }
+    .dinodata h1{
+        margin-left: 40px;
+    }
+    .dinodata p {
+        margin-left: 40px;
+        width: 90%;
+    }
+
+}
+@media only screen and (min-width: 1200px) {
+
+    
+    .dinodata {
+        margin: 20px 60px 20px 60px
+    }
+    .dinodata h1{
+        margin-left: 50px;
+    }
+    .dinodata p {
+        margin-left: 50px;
+        width: 90%;
+    }
+
+}
